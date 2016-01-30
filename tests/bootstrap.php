@@ -2,6 +2,7 @@
 
 require __DIR__.'/../vendor/autoload.php';
 
+use Carbon\Carbon;
 use Illuminate\Container\Container;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Hashing\BcryptHasher;
@@ -19,7 +20,7 @@ class Application extends Container
     public function __construct()
     {
         date_default_timezone_set('UTC');
-        Carbon\Carbon::setTestNow(Carbon\Carbon::now());
+        Carbon::setTestNow(Carbon::now());
 
         $this['app'] = $this;
         $this->setupAliases();
@@ -77,9 +78,8 @@ if (!function_exists('bcrypt')) {
     /**
      * Hash the given value.
      *
-     * @param string $value
-     * @param array  $options
-     *
+     * @param  string  $value
+     * @param  array   $options
      * @return string
      */
     function bcrypt($value, $options = [])
