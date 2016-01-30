@@ -17,5 +17,4 @@
   <exclude-pattern>resources/views/</exclude-pattern>
   <exclude-pattern>storage/</exclude-pattern>
   <exclude-pattern>vendor/</exclude-pattern>
-  <exclude-pattern>tests/</exclude-pattern>
 </ruleset>
