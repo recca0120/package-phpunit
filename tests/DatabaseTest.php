@@ -1,32 +1,5 @@
-# Laravel Package Develop Phpunit
+<?php
 
-This package is auto setup database [sqlite]
-
-you can add migrations to database/migrations
-
-and in your test case add code
-
-```php
-class DatabaseTest extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $app = App::getInstance();
-        $app->migrate('up');
-    }
-
-    public function tearDown()
-    {
-        $app = App::getInstance();
-        $app->migrate('down');
-    }
-}
-```
-
-
-## FULL DEMO
-
-```php
 use Illuminate\Database\Eloquent\Model;
 
 class DatabaseTest extends PHPUnit_Framework_TestCase
@@ -68,7 +41,3 @@ class Test extends Model
 {
     protected $guarded = ['id'];
 }
-```
-
-## notice
-### sqlite is not support alter table
