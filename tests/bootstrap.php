@@ -56,7 +56,9 @@ class Application extends Container
             'driver'   => 'sqlite',
             'database' => ':memory:',
         ]);
-        $connection->setEventDispatcher($this['events']);
+        if (isset($this['events']) === true) {
+            $connection->setEventDispatcher($this['events']);
+        }
         $connection->bootEloquent();
         $connection->setAsGlobal();
 
@@ -85,7 +87,7 @@ class Application extends Container
     }
 }
 
-if (!function_exists('bcrypt')) {
+if (function_exists('bcrypt') === false) {
     /**
      * Hash the given value.
      *
@@ -100,7 +102,7 @@ if (!function_exists('bcrypt')) {
     }
 }
 
-if (!function_exists('app')) {
+if (function_exists('app') === false) {
     function app()
     {
         return App::getInstance();
