@@ -18,6 +18,8 @@ copy phpunit.xml, tests folder to root
 ### step3
 execute phpunit
 
+## Example
+
 This package is auto setup database [sqlite]
 
 you can add migrations to database/migrations
