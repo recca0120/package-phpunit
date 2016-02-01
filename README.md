@@ -1,5 +1,23 @@
 # Laravel Package Develop Phpunit
 
+## Install
+
+### step1
+composer.json
+```
+require-dev: {
+    "recca0120/package-phpunit": "~0.2.1"
+}
+```
+
+composer install or composer update
+
+### step2
+copy phpunit.xml, tests folder to root
+
+### step3
+execute phpunit
+
 This package is auto setup database [sqlite]
 
 you can add migrations to database/migrations
