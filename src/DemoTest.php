@@ -10,15 +10,16 @@ class EmailTemplateTest extends PHPUnit_Framework_TestCase
     {
         $this->migrate('up');
     }
-    
+
     public function tearDown()
     {
         m::close();
         $this->migrate('down');
         $this->destroyApplication();
     }
-    
-    public function test_application() {
+
+    public function test_application()
+    {
         $app = $this->createApplication();
     }
 }
