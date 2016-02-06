@@ -12,8 +12,6 @@ use Mockery as m;
 
 trait Laravel
 {
-    public $app;
-
     public $aliases = [
         Facade::class  => 'Facade',
         App::class     => 'App',
@@ -22,8 +20,9 @@ trait Laravel
 
     public function createApplication()
     {
-        if (is_null($this->app) === false) {
-            return $this->app;
+        static $app;
+        if (is_null($app) === false) {
+            return $app;
         }
         $app = m::mock(Container::class.', Illuminate\Contracts\Foundation\Application')
             ->makePartial()
