@@ -6,14 +6,12 @@ class DatabaseTest extends PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $app = App::getInstance();
-        $app->migrate('up');
+        $this->migrate('up');
     }
 
     public function tearDown()
     {
-        $app = App::getInstance();
-        $app->migrate('down');
+        $this->migrate('down');
     }
 
     public function test_app_environment()
