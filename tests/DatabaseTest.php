@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 class DatabaseTest extends PHPUnit_Framework_TestCase
 {
     use Laravel;
-    
+
     public function setUp()
     {
         $this->migrate('up');
